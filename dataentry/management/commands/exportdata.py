@@ -3,6 +3,8 @@ from sqlite3 import Timestamp
 from django.core.management.base import BaseCommand
 from django.apps import apps
 import datetime
+
+from dataentry.utils import generate_csv_file
 #from dataentry.utils import generate_csv_file
 
 # propsed command = python manage.py exportdata model_name
@@ -30,10 +32,8 @@ class Command(BaseCommand):
         
         # fetch the data from the database
         data = model.objects.all()
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-        # generate csv file path
-      #  file_path = generate_csv_file(model_name)
-        file_path = f'exported_{model_name}_data_{timestamp}.csv'
+        file_path = generate_csv_file(model_name)
+
         # open the csv file and write the data
         with open(file_path, 'w', newline='') as file:
             writer = csv.writer(file)
