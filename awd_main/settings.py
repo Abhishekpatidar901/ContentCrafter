@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'anymail',
     'image_compression',
+    'stockanalysis',
 ]
 
 MIDDLEWARE = [
@@ -169,5 +172,5 @@ ANYMAIL = {
     "SENDINBLUE_API_KEY": config("AWD_API"),
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://6292-2405-201-f018-20b3-3463-60a-2f1a-4b5e.ngrok-free.app']
-BASE_URL = 'https://6292-2405-201-f018-20b3-3463-60a-2f1a-4b5e.ngrok-free.app'
+CSRF_TRUSTED_ORIGINS = ['https://8afe-2405-201-f018-20b3-e16a-a876-d8c8-4d96.ngrok-free.app']
+BASE_URL = 'https://8afe-2405-201-f018-20b3-e16a-a876-d8c8-4d96.ngrok-free.app'
