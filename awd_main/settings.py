@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'anymail',
     'image_compression',
     'stockanalysis',
+    'blog_generator',
 ]
 
 MIDDLEWARE = [

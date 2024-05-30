@@ -32,4 +32,5 @@ urlpatterns = [
     path('emails/', include('emails.urls')),
     path('image-compression/', include('image_compression.urls')),
     path('webscraping/', include('stockanalysis.urls')),
+    path('blog-generator/', include('blog_generator.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
