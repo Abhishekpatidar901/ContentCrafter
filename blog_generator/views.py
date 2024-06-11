@@ -79,21 +79,37 @@ def get_transcription(link):
 
     return transcript.text
 
-def generate_blog_from_transcription(transcription):
+# def generate_blog_from_transcription(transcription):
     
-    # generator = pipeline('text-generation', model='gpt2')
+#     # generator = pipeline('text-generation', model='gpt2')
+    # prompt = f"Based on the following transcript from a YouTube video, write a comprehensive blog article, write it based on the transcript, but dont make it look like a youtube video, make it look like a proper blog article:\n\n{transcription}\n\nArticle:"
+    # # generated_text = generator(prompt, max_length=5000)
+    # openai.api_key = config('OPEN_AI')
+
+   
+
+#     response = openai.Completion.create(
+#     model="gpt-4",
+#     prompt=prompt,
+#     max_tokens=3500
+#     )
+#     generated_content = response.choices[0].text.strip()
+#     #generated_content = generated_text[0]['generated_text']
+
+#     return generated_content
+def generate_blog_from_transcription(transcription):
     prompt = f"Based on the following transcript from a YouTube video, write a comprehensive blog article, write it based on the transcript, but dont make it look like a youtube video, make it look like a proper blog article:\n\n{transcription}\n\nArticle:"
     # generated_text = generator(prompt, max_length=5000)
     openai.api_key = config('OPEN_AI')
 
-   
-
-    response = openai.Completion.create(
-    model="gpt-4",
-    prompt=prompt,
-    max_tokens=1000
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=3500
     )
-    generated_content = response.choices[0].text.strip()
-    #generated_content = generated_text[0]['generated_text']
-
+     
+    generated_content = response['choices'][0]['message']['content']
     return generated_content

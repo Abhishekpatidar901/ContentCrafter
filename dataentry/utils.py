@@ -13,7 +13,7 @@ from emails.models import Email, Sent, EmailTracking, Subscriber
 from bs4 import BeautifulSoup
 
 def get_all_custom_models():
-    default_models = ['ContentType', 'Session', 'LogEntry', 'Group', 'Permission', 'User', 'Upload']
+    default_models = ['ContentType', 'Session', 'LogEntry', 'Group', 'Permission', 'User', 'Upload','Stock','StockAdmin','StockData']
     # try to get all the apps
     custom_models = []
     for model in apps.get_models():
