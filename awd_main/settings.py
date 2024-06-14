@@ -39,15 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dataentry',
-    'uploads',
+  
     'crispy_forms',
     'crispy_bootstrap5',
-    'emails',
     'ckeditor',
     'anymail',
-    'image_compression',
-    'stockanalysis',
+    'quiz_generator',
     'blog_generator',
 ]
 
@@ -149,7 +146,7 @@ MESSAGE_TAGS = {
     50:"critical"
 }
 
-CELERY_BROKER_URL ='redis://localhost:6379'
+
 
 #Email Configuration
 # EMAIL_HOST = config('EMAIL_HOST')
@@ -157,8 +154,8 @@ CELERY_BROKER_URL ='redis://localhost:6379'
 # EMAIL_HOST_USER =config('EMAIL_HOST_USER')
 # EMAIL_HOST_PASSWORD =config('EMAIL_HOST_PASSWORD')
 # EMAIL_USE_TLS=True
-DEFAULT_FROM_EMAIL ='Automate with Django <developer.abhip01@gmail.com>'
-DEFAULT_TO_EMAIL = 'abhishekpatidar901@gmail.com'
+# DEFAULT_FROM_EMAIL ='Automate with Django <developer.abhip01@gmail.com>'
+# DEFAULT_TO_EMAIL = 'abhishekpatidar901@gmail.com'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
@@ -168,10 +165,10 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
-ANYMAIL = {
-    "SENDINBLUE_API_KEY": config("AWD_API"),
-}
+# EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+# ANYMAIL = {
+#     "SENDINBLUE_API_KEY": config("AWD_API"),
+# }
 
-CSRF_TRUSTED_ORIGINS = ['https://47b0-2405-201-f018-2132-c009-308a-68ef-ee15.ngrok-free.app']
-BASE_URL = 'https://47b0-2405-201-f018-2132-c009-308a-68ef-ee15.ngrok-free.app'
+# CSRF_TRUSTED_ORIGINS = ['https://47b0-2405-201-f018-2132-c009-308a-68ef-ee15.ngrok-free.app']
+# BASE_URL = 'https://47b0-2405-201-f018-2132-c009-308a-68ef-ee15.ngrok-free.app'

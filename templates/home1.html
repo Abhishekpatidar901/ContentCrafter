@@ -1,0 +1,58 @@
+{% extends 'base1.html' %}
+
+
+{% block content %}
+<div class="container" style="padding: 50px;margin-top: 5%;">
+    {% if user.is_authenticated %}
+    <h2 class="text-center">ContentCrafter: From Video Insights to Educational Quizzes</h2>
+
+
+    <div class="row pt-5">
+
+
+
+        <!-- AI Blog Generator -->
+        <div class="col-md-6">
+            <a href="{% url 'bloggen' %}" class="text-decoration-none text-dark">
+                <div class="card alert-warning shadow">
+                    <div class="card-header">
+                    <h4>Blog Generator</h4>
+                    </div>
+                    <div class="card-body">
+                    <p class="card-text">Blog articles from youtube videos using AI.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    <div class="col-md-6">
+        <a href="{% url 'home' %}" class="text-decoration-none text-dark">
+            <div class="card alert-danger shadow">
+                <div class="card-header">
+                <h4>Quiz Generator</h4>
+                </div>
+                <div class="card-body">
+                <p class="card-text">Generate Quiz using AI.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% else %}
+
+    <div class="home-info">
+        <h2 class="text-center">ContentCrafter: From Video Insights to Educational Quizzes</h2>
+        <p class="lead text-center text-muted">
+            "ContentCrafter: From Video Insights to Educational Quizzes" harnesses the power of OpenAI's generative models alongside the robust Django framework to transform video content into concise summaries and tailored quizzes. This innovative project integrates Django's versatile backend capabilities with advanced AI from OpenAI to extract and condense information from videos, followed by generating interactive quizzes that test comprehension. By combining Django's scalability with cutting-edge AI, SmartScribe provides a powerful tool for educators and learners, enhancing the educational process by turning video resources into interactive and assessable content.
+        </p>
+
+        <div style="display: flex; justify-content: center;">
+            <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
+            &nbsp;<a href="{% url 'register' %}" class="btn btn-success">REGISTER</a>
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -22,15 +22,10 @@ from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', views.home, name='home'),
-    path('dataentry/', include('dataentry.urls')),
-    path('celery-test/', views.celery_test),
-    # Registration & Login urls
+    path('', views.home1, name='home1'),
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
-    path('emails/', include('emails.urls')),
-    path('image-compression/', include('image_compression.urls')),
-    path('webscraping/', include('stockanalysis.urls')),
     path('blog-generator/', include('blog_generator.urls')),
+    path('quiz-generator/',include('quiz_generator.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
